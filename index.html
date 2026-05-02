@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MOVE TV New Zealand | Balkan TV, Movies & Channels</title>
+
+  <meta name="description" content="MOVE TV New Zealand representative for Balkan TV packages, ex-YU channels, movies, series, sports, catch-up TV and smart device streaming. Previously known as NetTV Plus." />
+
+  <meta name="keywords" content="MOVE TV New Zealand, NetTV Plus NZ, Balkan TV NZ, Serbian TV New Zealand, Croatian TV New Zealand, Bosnian TV NZ, ex-YU channels, Balkan channels New Zealand" />
+
+  <style>
+    :root {
+      --dark: #080816;
+      --dark-2: #111127;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.14);
+      --text: #ffffff;
+      --muted: #b9b9c9;
+      --accent: #ffb200;
+      --accent-2: #e1aa14;
+      --grey: #4d4e50;
+      --success: #2de38d;
+      --radius: 26px;
+      --shadow: 0 25px 80px rgba(0,0,0,0.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), #fff0b8, var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .topbar {
+      background: rgba(0,0,0,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .topbar strong {
+      color: #fff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8,8,22,0.82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo-main {
+      font-size: 30px;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .menu a:hover {
+      color: #fff;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #111;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 35px rgba(255,178,0,0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 45px rgba(255,178,0,0.34);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.18);
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 22px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 60px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(255,178,0,0.26), transparent 32%),
+        radial-gradient(circle at 78% 12%, rgba(225,170,20,0.18), transparent 30%),
+        linear-gradient(180deg, #111127 0%, #080816 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 46px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,178,0,0.12);
+      border: 1px solid rgba(255,178,0,0.25);
+      color: #ffe2a0;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 18px rgba(45,227,141,0.7);
+    }
+
+    .tv-card {
+      position: relative;
+      background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 36px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .screen {
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,178,0,0.45), transparent 30%),
+        linear-gradient(135deg, #222242, #06060f);
+      border: 1px solid rgba(255,255,255,0.16);
+      min-height: 390px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .screen-top {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .play-box {
+      margin-top: 42px;
+    }
+
+    .play-badge {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #111;
+      font-size: 26px;
+      box-shadow: 0 15px 45px rgba(255,178,0,0.35);
+      margin-bottom: 24px;
+    }
+
+    .screen h3 {
+      font-size: 33px;
+      line-height: 1.1;
+      max-width: 410px;
+      letter-spacing: -1px;
+    }
+
+    .mini-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .mini-card {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: #fff;
+      font-size: 19px;
+      margin-bottom: 3px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      min-height: 245px;
+      transition: 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.11);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,178,0,0.13);
+      color: var(--accent);
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+    }
+
+    .content-strip {
+      background: linear-gradient(135deg, rgba(255,178,0,0.12), rgba(255,255,255,0.04));
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 14px;
+      animation: ticker 24s linear infinite;
+      width: max-content;
+    }
+
+    .channel-pill {
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: #fff;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .packages {
+      background:
+        radial-gradient(circle at bottom right, rgba(255,178,0,0.18), transparent 30%),
+        var(--dark);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      position: relative;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+    }
+
+    .price-card.popular {
+      background: linear-gradient(180deg, rgba(255,178,0,0.18), rgba(255,255,255,0.07));
+      border-color: rgba(255,178,0,0.42);
+      transform: translateY(-10px);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--accent);
+      color: #111;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+
+    .price small {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .list {
+      list-style: none;
+      margin: 24px 0;
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .list li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .devices {
+      background: var(--dark-2);
+    }
+
+    .device-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .device-panel {
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at top left, rgba(255,178,0,0.2), transparent 34%),
+        rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 34px;
+    }
+
+    .device-panel h3 {
+      font-size: 34px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .device-panel p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .device-icons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .device-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .device-item span {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #111;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      color: #fff;
+      border: 0;
+      padding: 22px;
+      font-size: 17px;
+      font-weight: 900;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 22px 22px;
+      color: var(--muted);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .cta {
+      padding: 86px 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,178,0,0.24), transparent 34%),
+        linear-gradient(180deg, var(--dark-2), var(--dark));
+    }
+
+    .cta-box {
+      text-align: center;
+      border-radius: 40px;
+      padding: 54px 28px;
+      background:
+        linear-gradient(135deg, rgba(255,178,0,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 28px;
+      font-size: 18px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 30px;
+      padding: 30px;
+    }
+
+    .contact-card h3 {
+      font-size: 27px;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .contact-line {
+      display: block;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 46px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      background: #06060f;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr;
+      gap: 30px;
+    }
+
+    footer h4 {
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--muted);
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .small-print {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 30px;
+      padding-top: 22px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .menu,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .menu.open {
+        display: flex;
+        position: absolute;
+        left: 4%;
+        right: 4%;
+        top: 78px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px;
+        background: rgba(8,8,22,0.98);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 22px;
+      }
+
+      .hero-grid,
+      .device-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid,
+      .pricing-grid,
+      .steps-grid,
+      .faq-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .price-card.popular {
+        transform: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .features-grid,
+      .pricing-grid,
+      .steps-grid,
+      .faq-grid,
+      .device-icons,
+      .mini-cards,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screen {
+        min-height: 330px;
+      }
+
+      .screen h3 {
+        font-size: 27px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div><strong>MOVE TV New Zealand</strong> — previously known to many customers as NetTV Plus</div>
+      <div>Call: <strong>+64 21 000 0000</strong> | Email: <strong>your@email.co.nz</strong></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="MOVE TV New Zealand">
+        <span class="logo-main gradient-text">MOVE NZ</span>
+        <span class="logo-sub">Balkan TV in New Zealand</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="#packages">Packages</a>
+        <a href="#channels">Channels</a>
+        <a href="#features">Features</a>
+        <a href="#devices">Devices</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="tel:+64210000000">Call us</a>
+        <a class="btn btn-primary" href="#contact">Try it free</a>
+      </div>
+
+      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Authorised MOVE TV representative in New Zealand</div>
+
+          <h1>
+            Balkan TV, movies and sport — <span class="gradient-text">made easy in NZ.</span>
+          </h1>
+
+          <p>
+            Enjoy your favourite ex-YU channels, movies, series, children’s programs, sport and catch-up TV on your Smart TV, phone, tablet or TV box — with local New Zealand help when you need it.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#packages">View packages</a>
+            <a class="btn btn-outline" href="https://wa.me/YOUR-WHATSAPP-NUMBER">Message on WhatsApp</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item"><span class="dot"></span> Local NZ support</div>
+            <div class="trust-item"><span class="dot"></span> Smart TV & mobile apps</div>
+            <div class="trust-item"><span class="dot"></span> Balkan channels & video club</div>
+          </div>
+        </div>
+
+        <div class="tv-card">
+          <div class="screen">
+            <div class="screen-top">
+              <span>MOVE TV</span>
+              <span>Live • Catch-up • Video Club</span>
+            </div>
+
+            <div class="play-box">
+              <div class="play-badge">▶</div>
+              <h3>Your family’s favourite Balkan entertainment, all in one place.</h3>
+            </div>
+
+            <div class="mini-cards">
+              <div class="mini-card"><strong>400+</strong> Channels*</div>
+              <div class="mini-card"><strong>6</strong> Profiles*</div>
+              <div class="mini-card"><strong>NZ</strong> Support</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">Why customers choose MOVE</div>
+          <h2>A modern way to watch Balkan TV from New Zealand.</h2>
+          <p>
+            MOVE gives you flexible TV viewing, easier search, catch-up options and entertainment for the whole family.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">↺</div>
+            <h3>Catch-up TV</h3>
+            <p>Missed a program? Go back and watch selected content when it suits you, depending on your package and channel availability.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🎬</div>
+            <h3>Video club</h3>
+            <p>Watch movies, series and premium shows from the Balkans with easier browsing and search options.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h3>Family profiles</h3>
+            <p>Create separate profiles for different family members so everyone can continue watching their favourite content.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">📺</div>
+            <h3>Live TV channels</h3>
+            <p>Access popular Serbian, Croatian, Bosnian, Montenegrin, Macedonian and regional channels in one place.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🔎</div>
+            <h3>Easy search</h3>
+            <p>Find programs, films, actors and series faster with a cleaner, smarter viewing experience.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🛟</div>
+            <h3>Local NZ help</h3>
+            <p>Need help setting it up? We can guide you in English or our language, right here in New Zealand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="channels" class="content-strip">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">Channels and content</div>
+          <h2>Popular Balkan entertainment for every generation.</h2>
+          <p>
+            From news and sport to movies, kids programs and regional favourites — MOVE brings home closer.
+          </p>
+        </div>
+
+        <div class="ticker" aria-label="Example channel names">
+          <span class="channel-pill">RTS</span>
+          <span class="channel-pill">Pink TV</span>
+          <span class="channel-pill">Prva TV</span>
+          <span class="channel-pill">B92</span>
+          <span class="channel-pill">Arena Sport</span>
+          <span class="channel-pill">Superstar TV</span>
+          <span class="channel-pill">Hayat TV</span>
+          <span class="channel-pill">HRT</span>
+          <span class="channel-pill">BN TV</span>
+          <span class="channel-pill">Balkan Trip</span>
+
+          <span class="channel-pill">RTS</span>
+          <span class="channel-pill">Pink TV</span>
+          <span class="channel-pill">Prva TV</span>
+          <span class="channel-pill">B92</span>
+          <span class="channel-pill">Arena Sport</span>
+          <span class="channel-pill">Superstar TV</span>
+          <span class="channel-pill">Hayat TV</span>
+          <span class="channel-pill">HRT</span>
+          <span class="channel-pill">BN TV</span>
+          <span class="channel-pill">Balkan Trip</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages" class="packages">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">Packages</div>
+          <h2>Choose the MOVE package that suits your household.</h2>
+          <p>
+            Contact us for the latest New Zealand pricing, package options and device setup advice.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Starter</h3>
+            <p class="price-note">Great for basic Balkan TV viewing.</p>
+            <div class="price">Ask us <small>for NZ price</small></div>
+            <ul class="list">
+              <li>Selected live TV channels</li>
+              <li>Smart TV / app support</li>
+              <li>Good for light viewing</li>
+              <li>Local setup guidance</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Enquire now</a>
+          </div>
+
+          <div class="price-card popular">
+            <div class="popular-badge">Most popular</div>
+            <h3>Family</h3>
+            <p class="price-note">Best for families wanting more channels and flexibility.</p>
+            <div class="price">Ask us <small>for NZ price</small></div>
+            <ul class="list">
+              <li>More Balkan channels</li>
+              <li>Movies, series and shows</li>
+              <li>Catch-up TV options</li>
+              <li>Multiple device support</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Get started</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Premium</h3>
+            <p class="price-note">For customers who want the strongest entertainment option.</p>
+            <div class="price">Ask us <small>for NZ price</small></div>
+            <ul class="list">
+              <li>Premium content options</li>
+              <li>Sport and entertainment</li>
+              <li>Video club access</li>
+              <li>Best for heavy viewers</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Compare packages</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="devices" class="devices">
+      <div class="container device-grid">
+        <div class="device-panel">
+          <div class="section-kicker">Devices</div>
+          <h3>Watch on the devices you already use.</h3>
+          <p>
+            MOVE can be used on many popular devices. If you are not sure whether your TV or device is supported, contact us and we will help you check before you subscribe.
+          </p>
+          <a class="btn btn-primary" href="#contact">Check my device</a>
+        </div>
+
+        <div class="device-icons">
+          <div class="device-item"><span>📺</span>Smart TV</div>
+          <div class="device-item"><span>📱</span>Phone</div>
+          <div class="device-item"><span>💻</span>Computer</div>
+          <div class="device-item"><span>📲</span>Tablet</div>
+          <div class="device-item"><span>📦</span>TV Box</div>
+          <div class="device-item"><span>🌍</span>Worldwide</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">Easy setup</div>
+          <h2>Start watching in four simple steps.</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Contact us</h3>
+            <p>Tell us what you want to watch and which device you have.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Choose package</h3>
+            <p>We help you select the best package for your household.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Install app</h3>
+            <p>We guide you through app setup on your supported device.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Start watching</h3>
+            <p>Enjoy Balkan TV, movies, series and catch-up content.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head center">
+          <div class="section-kicker">FAQ</div>
+          <h2>Common questions from New Zealand customers.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Is MOVE the same as NetTV Plus? <span>+</span></button>
+            <div class="faq-answer">
+              Many customers previously knew the service as NetTV Plus. MOVE is the newer platform and brand experience. Contact us and we can explain what has changed and what package is best for you.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can I watch it in New Zealand? <span>+</span></button>
+            <div class="faq-answer">
+              Yes, MOVE is available to customers in New Zealand, subject to package, device compatibility and internet connection.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Do I need a special box? <span>+</span></button>
+            <div class="faq-answer">
+              Not always. Many customers can use a Smart TV, phone, tablet or other supported device. A TV box may be helpful if your TV does not support the app.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Can you help me install it? <span>+</span></button>
+            <div class="faq-answer">
+              Yes. As New Zealand representatives, we can guide you through setup and help you understand the best option for your home.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Are there Serbian, Croatian and Bosnian channels? <span>+</span></button>
+            <div class="faq-answer">
+              MOVE includes a wide range of Balkan and ex-YU content. Exact channels can depend on the package, so contact us for the latest channel list.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How fast does my internet need to be? <span>+</span></button>
+            <div class="faq-answer">
+              A stable broadband connection is recommended, especially for HD viewing. If you are unsure, we can help you check before you start.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to bring Balkan TV back into your home?</h2>
+          <p>
+            Speak with your New Zealand MOVE TV representative today. We will help you choose the right package, check your device and guide you through the setup.
+          </p>
+          <div class="hero-buttons" style="justify-content:center;">
+            <a class="btn btn-primary" href="tel:+64210000000">Call now</a>
+            <a class="btn btn-outline" href="https://wa.me/YOUR-WHATSAPP-NUMBER">WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Contact</div>
+          <h2>MOVE TV New Zealand support and subscriptions.</h2>
+          <p>
+            Contact us for packages, pricing, setup help, channel information or device compatibility.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Talk to us</h3>
+            <p>We can help in English or our language.</p>
+
+            <a class="contact-line" href="tel:+64210000000">Phone: +64 21 000 0000</a>
+            <a class="contact-line" href="mailto:your@email.co.nz">Email: your@email.co.nz</a>
+            <a class="contact-line" href="https://wa.me/YOUR-WHATSAPP-NUMBER">WhatsApp: Message us</a>
+          </div>
+
+          <div class="contact-card">
+            <h3>What to send us</h3>
+            <p>To help you faster, please tell us:</p>
+
+            <ul class="list">
+              <li>Which country/language channels you want most</li>
+              <li>What TV or device you have</li>
+              <li>Whether you are a new or existing customer</li>
+              <li>Your preferred contact number</li>
+            </ul>
+
+            <a class="btn btn-primary" href="mailto:your@email.co.nz?subject=MOVE TV New Zealand Enquiry">Send enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">
+            <span class="logo-main gradient-text">MOVE NZ</span>
+            <span class="logo-sub">Balkan TV in New Zealand</span>
+          </div>
+          <p style="margin-top:16px;">
+            New Zealand representative for MOVE TV, helping Balkan families enjoy live TV, movies, series and catch-up entertainment.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <a href="#packages">Packages</a>
+          <a href="#channels">Channels</a>
+          <a href="#features">Features</a>
+          <a href="#devices">Devices</a>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact">Device help</a>
+          <a href="#contact">Setup help</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+64210000000">+64 21 000 0000</a>
+          <a href="mailto:your@email.co.nz">your@email.co.nz</a>
+          <a href="https://wa.me/YOUR-WHATSAPP-NUMBER">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="small-print">
+        <p>
+          © <span id="year"></span> MOVE TV New Zealand Representative. All rights reserved.
+          Channel availability, features, devices and package details may vary. This website is for New Zealand customer enquiries and local assistance.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("open");
+    }
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
